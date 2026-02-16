@@ -1,0 +1,133 @@
+baseURL = "/"
+languageCode = "en-us"
+defaultContentLanguage = "en-us"
+title = "Davide's Blog"
+theme = "hugo-tranquilpeak-theme"
+[pagination]
+  pagerSize = 7
+canonifyurls = true
+
+[permalinks]
+  posts = "/:year/:month/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  archive = "archives"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 1
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    noClasses = false
+
+# Author info is in [params] for Hugo 0.124+ compatibility
+# Set author details in [params.author] below
+
+# ------
+# Sidebar menu
+# ------
+[[menu.main]]
+  weight = 1
+  identifier = "home"
+  name = "Home"
+  pre = "<i class=\"sidebar-button-icon fas fa-lg fa-home\" aria-hidden=\"true\"></i>"
+  url = "/"
+[[menu.main]]
+  weight = 2
+  identifier = "categories"
+  name = "Categories"
+  pre = "<i class=\"sidebar-button-icon fas fa-lg fa-bookmark\" aria-hidden=\"true\"></i>"
+  url = "/categories"
+[[menu.main]]
+  weight = 3
+  identifier = "tags"
+  name = "Tags"
+  pre = "<i class=\"sidebar-button-icon fas fa-lg fa-tags\" aria-hidden=\"true\"></i>"
+  url = "/tags"
+[[menu.main]]
+  weight = 4
+  identifier = "archives"
+  name = "Archives"
+  pre = "<i class=\"sidebar-button-icon fas fa-lg fa-archive\" aria-hidden=\"true\"></i>"
+  url = "/archives"
+[[menu.main]]
+  weight = 5
+  identifier = "about"
+  name = "About"
+  pre = "<i class=\"sidebar-button-icon fas fa-lg fa-question\" aria-hidden=\"true\"></i>"
+  url = "/#about"
+
+[[menu.links]]
+  weight = 1
+  identifier = "github"
+  name = "GitHub"
+  pre = "<i class=\"sidebar-button-icon fab fa-lg fa-github\" aria-hidden=\"true\"></i>"
+  url = "https://github.com/"
+
+[[menu.misc]]
+  weight = 1
+  identifier = "rss"
+  name = "RSS"
+  pre = "<i class=\"sidebar-button-icon fas fa-lg fa-rss\" aria-hidden=\"true\"></i>"
+  url = "/index.xml"
+
+# ------
+# Params
+# ------
+[params]
+  description = "Davide's Blog"
+
+  [params.author]
+    name = "Davide"
+    bio = "Welcome to my blog"
+    # job = "Your job title"
+    # location = "Your location"
+    picture = "images/avatar.png"
+
+  # Syntax highlighter: "highlight.js" or "prism.js"
+  syntaxHighlighter = "highlight.js"
+
+  # Sidebar always visible on the left (option 1 = large sidebar on large screens)
+  sidebarBehavior = 1
+
+  # Clear reading mode (hide sidebar on article pages)
+  clearReading = true
+
+  hierarchicalCategories = true
+
+  # Cover image — put an image in static/images/
+  coverImage = "images/cover.jpg"
+
+  imageGallery = true
+  thumbnailImage = true
+  thumbnailImagePosition = "bottom"
+  autoThumbnailImage = true
+
+  # Sharing options
+  [[params.sharingOptions]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    url = "https://twitter.com/intent/tweet?text=%s"
+
+  [[params.sharingOptions]]
+    name = "Linkedin"
+    icon = "fab fa-linkedin"
+    url = "https://www.linkedin.com/sharing/share-offsite/?url=%s"
+
+  # Disable comments by default (enable later if needed)
+  [params.comment]
+    [params.comment.disqus]
+      enable = false
+    [params.comment.gitalk]
+      enable = false
+
+  [params.header.rightLink]
+    class = ""
+    icon = ""
+    url = "/#about"
